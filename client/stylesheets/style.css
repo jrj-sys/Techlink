@@ -1,0 +1,28 @@
+:root {
+  --primary: #0d6efd;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+ol li {
+  list-style: none;
+}
+
+header, .navbar-brand {
+  font-size: 30px;
+}
+
+header a {
+  font-size: 20px;
+}
+
+article h3 {
+  color: var(--primary);
+}
+
+footer h2 {
+  font-size: 30px;
+  color: var(--primary);
+}

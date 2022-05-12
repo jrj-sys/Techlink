@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const sequelize = require('../../config/connection');
-const { User, Post, Comment, Reaction } = require('../../models');
+const { User, Post, Comment } = require('../../models');
+const withAuth = require('../../utils/auth.js')
+
 
 // GET all posts (linked to Users)
 router.get('/', (req, res) => {
@@ -71,7 +72,7 @@ router.get('/:id', (req, res) => {
 });
 
 // POST a new post
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
   // expects {title: 'Taskmaster goes public!', post_text: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
       title: req.body.title,
@@ -86,7 +87,7 @@ router.post('/', (req, res) => {
 });
 
 // PUT an update to a post by id
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
@@ -112,7 +113,7 @@ router.put('/:id', (req, res) => {
 });
 
 // DELETE a post by id
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
     where: {
       id: req.params.id
