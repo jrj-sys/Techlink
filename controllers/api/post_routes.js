@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   Post.findAll({
     // Query configuration
     attributes: ['id', 'post_text', 'title', 'created_at',
-    // [sequelize.literal('(SELECT COUNT(*) FROM reaction WHERE post.id = reaction.post_id)'), 'reacted_count']
   ],
     order: [['created_at', 'DESC']], 
     include: [
@@ -41,7 +40,6 @@ router.get('/:id', (req, res) => {
       id: req.params.id
     },
     attributes: ['id', 'post_text', 'title', 'created_at',
-    // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
   ],
     include: [
         {
@@ -73,7 +71,6 @@ router.get('/:id', (req, res) => {
 
 // POST a new post
 router.post('/', withAuth, (req, res) => {
-  // expects {title: 'Taskmaster goes public!', post_text: 'https://taskmaster.com/press', user_id: 1}
   Post.create({
       title: req.body.title,
       post_text: req.body.post_text,

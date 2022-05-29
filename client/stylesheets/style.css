@@ -22,6 +22,10 @@ article h3 {
   color: var(--primary);
 }
 
+a {
+  text-decoration: none;
+}
+
 footer h2 {
   font-size: 30px;
   color: var(--primary);
