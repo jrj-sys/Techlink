@@ -1,4 +1,12 @@
-{{> post_info post}}
+<article>
+  <div>
+    <h2>{{post.title}}</h2>
+    <p>{{post.post_text}}</p>
+  </div>
+  <div>
+    by {{post.user.username}} on {{format_date post.created_at}}
+  </div>
+</article>
 
 {{#if loggedIn}}
 <form class="comment-form">
@@ -17,5 +25,4 @@
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-<script src="/javascript/upvote.js"></script>
 {{/if}}
