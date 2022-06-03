@@ -1,24 +1,22 @@
-<article>
-  <div>
+<a class="" href="/dashboard"> &larr; Back to dashboard</a>
+<article class="">
+  <div class="p-1 m-4 border border-primary">
     <h2>{{post.title}}</h2>
     <p>{{post.post_text}}</p>
+    by <b>{{post.user.username}}</b> on {{format_date post.created_at}}
   </div>
-  <div>
-    by {{post.user.username}} on {{format_date post.created_at}}
-  </div>
+
+  {{#if loggedIn}}
+  <form class="comment-form p-1 m-4 form-group">
+    <div class="">
+      <textarea name="comment-body form-control" rows="5" id="comment" placeholder="Message"></textarea>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary">Add Comment</button>
+    </div>
+  </form>
+  {{/if}}
 </article>
-
-{{#if loggedIn}}
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">Add Comment</button>
-  </div>
-</form>
-{{/if}}
 
 {{> comments post.comments}}
 

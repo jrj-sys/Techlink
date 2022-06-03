@@ -19,11 +19,9 @@ router.get('/:id', (req, res) => {
 // POST a comment
 router.post('/', (req, res) => {
   Comment.create({
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
     comment_text: req.body.comment_text,
     post_id: req.body.post_id
-    // use the id from the session
-    // user_id: req.session.user_id
   })
   .then(dbCommentData => res.json(dbCommentData))
   .catch(err => {

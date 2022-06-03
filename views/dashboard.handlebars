@@ -1,31 +1,34 @@
 <section>
-  <h2>Create New Post</h2>
+  <h2 class="m-4">Create New Post</h2>
 
-  <form class="new-post-form">
+  <form class="new-post-form p-4 m-4 border border-primary">
     <div>
-      <label for="post-title">Title</label>
+      <label for="post-title">Title</label></br>
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-text">What's on your mind?</label>
-      <input type="text" id="post-text" name="post-text"/>
+      <label for="post-text">What's on your mind?</label></br>
+      <textarea type="text" id="post-text" name="post-text"></textarea>
     </div>
-    <button type="submit" class="btn">Create</button>
+    </br>
+    <button type="submit" class="btn btn-primary">Create</button>
   </form>
 </section>
 
-{{!#if posts.length}}
+{{#if posts.length}}
 <section>
-  <h2>Your Posts</h2>
+  <h2 class="m-4">Your Posts</h2>
   <ol>
-    {{!#each posts as |post|}}
-    <li>
-      {{!> post-info post}}
-      <a href="/dashboard/edit/{{!post.id}}" class="edit-link">Edit Post</a>
+    {{#each posts as |post|}}
+    <li class="border border-primary m-2 p-2">
+      {{> post_info post}}
+      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit Post</a>
     </li>
-    {{!/each}}
+    {{else}}
+    <h3>No Posts Yet!</h3>
+    {{/each}}
   </ol>
 </section>
-{{!/if}} 
+{{/if}} 
 
-<script src="/javascript/add_post.js"></script> 
+<script src="/javascript/add_post.js"></script>  

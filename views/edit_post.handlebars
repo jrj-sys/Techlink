@@ -1,0 +1,20 @@
+<article class="">
+    <div class=""></div>
+  <a class="" href="/dashboard"> &larr; Back to dashboard</a>
+  <h2 class="p-4">Edit Post</h2>
+  <form class="edit-post-form p-3 m-4 border border-primary">
+    <div classs="">
+      <input name="post-title" type="text" value="{{post.title}}"/></br></br>
+      <input name="post-text" type="text" value="{{post.post_text}}">
+    </div>
+    <div>
+      by you on {{format_date post.created_at}}
+    </div>
+    </br>
+    <button type="submit" class="btn btn-success save">Save Post</button>
+    <button type="button" class="btn btn-danger delete">Delete Post</button>
+  </form>
+</article>
+
+<script src="/javascript/edit_post.js"></script>
+<script src="/javascript/delete_post.js"></script>
