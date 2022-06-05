@@ -23,7 +23,7 @@ HTML, CSS, Node.js, Express.js, MySQL & Sequelize ORM
 ## Contribution 
 Issues can be created at any time [here](https://github.com/jrj-sys/Techlink/issues).
 ## Questions
-Please reach out to me via [GitHub](https://github.com/jrj-sys) or Email (jamesjamel99@gmail.com) for additional questions.
+Please reach out to me via [GitHub](https://github.com/jrj-sys) or email (jamesjamel99@gmail.com) for additional questions.
 ## License
 This is free and unencumbered software released into the public domain.
 
